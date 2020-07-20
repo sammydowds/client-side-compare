@@ -1,0 +1,62 @@
+export let defaultState = {
+    //react 
+    reactRepo: {},
+    reactRepoErro: false,
+    reactRepoLoaded: false,
+    reactParticipation: {},
+    reactParticipationError: false, 
+    reactParticipationLoaded: false,
+    reactIssuesCreated: {}, 
+    reactIssuesCreatedLoaded: false, 
+    reactIssuesCreatedError: false,
+    reactIssuesClosed: {}, 
+    reactIssuesClosedLoaded: false, 
+    reactIssuesClosedError: false, 
+    //angular
+    angularRepo: {},
+    angulareRepoError: false,  
+    angularRepoLoaded: false,
+    angularParticipation: {},
+    angularParticipationError: false,
+    angularParticipationLoaded: false,
+    angularIssuesCreated: {}, 
+    angularIssuesCreatedLoaded: false, 
+    angularIssuesCreatedError: false,
+    angularIssuesClosed: {}, 
+    angularIssuesClosedLoaded: false, 
+    angularIssuesClosedError: false, 
+    //ember
+    emberRepo: {},
+    emberRepoError: false, 
+    emberRepoLoaded: false,
+    emberParticipation: {},
+    emberParticipationError: false, 
+    emberParticipationLoaded: false,
+    emberIssuesCreated: {}, 
+    emberIssuesCreatedLoaded: false, 
+    emberIssuesCreatedError: false,
+    emberIssuesClosed: {}, 
+    emberIssuesClosedLoaded: false, 
+    emberIssuesClosedError: false, 
+    //vue
+    vueRepo: {}, 
+    vueRepoError: false, 
+    vueRepoLoaded: false,
+    vueParticipation: {}, 
+    vueParticipationError: false,  
+    vueParticipationLoaded: false,
+    vueIssuesCreated: {}, 
+    vueIssuesCreatedLoaded: false, 
+    vueIssuesCreatedError: false,
+    vueIssuesClosed: {}, 
+    vueIssuesClosedLoaded: false, 
+    vueIssuesClosedError: false,
+    //votes
+    votes: {}, 
+    votesError: false, 
+    votesLoaded: false,
+    //other 
+    message: null, //message about last updated 
+    frequency: 65000, //frequency of fetches in ms
+    activity: 365 //days of activity you want to get data for
+}
