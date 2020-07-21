@@ -68,6 +68,9 @@ function GithubDataTable(props) {
         <Table className="stats-table" size="sm" hover bordered>
                 <thead>
                     <tr>
+                        <th colSpan="8" className='lead'><strong>Github Data</strong></th>
+                    </tr>
+                    <tr>
                         <th colSpan="4">Static Data</th>
                         <th colSpan="4">Past {props.activity} weeks</th>
                     </tr>

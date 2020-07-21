@@ -8,7 +8,7 @@ function StatsRow(props) {
         <tr>
             {props.repoError
                 ? <React.Fragment>
-                    <td colSpan="2">Failed to fetch {props.name} Repo</td>
+                    <td colSpan="4">Failed to fetch {props.name} Repo</td>
                 </React.Fragment>
                 :<React.Fragment>
                     <td>{props.repo.name}</td>

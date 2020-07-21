@@ -35,7 +35,7 @@ class MainComponent extends Component {
             }
         })
         .then(response => response.json())
-        .then(response => this.setState({votes: response, votesLoaded: true, votesError: false}))
+        .then(response => this.setState({votes: response, votesLoaded: true, votesError: false, votesErrorMessage: null}))
         .catch(error => {
             this.setState({votesError: true, votesLoaded: true});
         }); 
@@ -165,7 +165,9 @@ class MainComponent extends Component {
                 sessionStorage.setItem('votedRepo', 'true');
                 this.fetchVotes(); 
             })
-            .catch(error => alert(error)); 
+            .catch(error => {
+                alert(error); 
+            }); 
         } else {
             alert('Sorry you have already voted during this session!'); 
         }

@@ -4,7 +4,7 @@ export const repoDataUrl = {
     'ember': 'https://api.github.com/repos/emberjs/ember.js',
     'vue': 'https://api.github.com/repos/vuejs/vue'
 }
-
+// currently note used
 export const pullRequestsMergedUrl = {
     'react': 'https://api.github.com/search/issues?q=repo:facebook/react+is:pr+is:merged+merged:>',
     'angular': 'https://api.github.com/search/issues?q=repo:angular/angular+is:pr+is:merged+merged:>', 
