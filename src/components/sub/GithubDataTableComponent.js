@@ -1,5 +1,8 @@
 import React from 'react';
 import StatsRow from './StatsRowComponent'; 
+import {
+    Table
+} from 'reactstrap'; 
 
 function GithubDataTable(props) {
     //initializing rows to show loading  
@@ -9,7 +12,7 @@ function GithubDataTable(props) {
     let vue = <tr><td colSpan="7">Vue stats loading...</td></tr>
 
     //conditional rendering based on loading data 
-    if (props.reactRepoLoaded && props.reactIssuesCreatedLoaded && props.reactIssuesClosedLoaded) {
+    if (props.reactRepoLoaded && props.reactIssuesCreatedLoaded && props.reactIssuesClosedLoaded && props.reactCommitActivityLoaded) {
         react = <StatsRow 
                     repo={props.reactRepo} 
                     repoError={props.reactRepoError}
@@ -17,10 +20,12 @@ function GithubDataTable(props) {
                     issuesCreatedError={props.reactIssuesCreatedError}
                     issuesClosed={props.reactIssuesClosed}
                     issuesClosedError={props.reactIssuesClosedError}
+                    commitActivity={props.reactCommitActivity}
+                    commitActivityError={props.reactCommitActivityError}
                     name="react"
                 />
     } 
-    if (props.angularRepoLoaded && props.angularIssuesCreatedLoaded && props.angularIssuesClosedLoaded) {
+    if (props.angularRepoLoaded && props.angularIssuesCreatedLoaded && props.angularIssuesClosedLoaded && props.angularCommitActivityLoaded) {
         angular = <StatsRow 
                     repo={props.angularRepo} 
                     repoError={props.angularRepoError}
@@ -28,10 +33,12 @@ function GithubDataTable(props) {
                     issuesCreatedError={props.angularIssuesCreatedError}
                     issuesClosed={props.angularIssuesClosed}
                     issuesClosedError={props.angularIssuesClosedError}
+                    commitActivity={props.angularCommitActivity}
+                    commitActivityError={props.angularCommitActivityError}
                     name="angular"
                 />
     } 
-    if (props.emberRepoLoaded && props.emberIssuesCreatedLoaded && props.emberIssuesClosedLoaded) {
+    if (props.emberRepoLoaded && props.emberIssuesCreatedLoaded && props.emberIssuesClosedLoaded && props.emberCommitActivityLoaded) {
         ember = <StatsRow 
                     repo={props.emberRepo} 
                     repoError={props.emberRepoError}
@@ -39,10 +46,12 @@ function GithubDataTable(props) {
                     issuesCreatedError={props.emberIssuesCreatedError}
                     issuesClosed={props.emberIssuesClosed}
                     issuesClosedError={props.emberIssuesClosedError}
+                    commitActivity={props.emberCommitActivity}
+                    commitActivityError={props.emberCommitActivityError}
                     name="ember"
                 />
     } 
-    if (props.vueRepoLoaded && props.vueIssuesCreatedLoaded && props.vueIssuesClosedLoaded) {
+    if (props.vueRepoLoaded && props.vueIssuesCreatedLoaded && props.vueIssuesClosedLoaded && props.vueCommitActivityLoaded) {
         vue = <StatsRow 
                 repo={props.vueRepo} 
                 repoError={props.vueRepoError}
@@ -50,20 +59,27 @@ function GithubDataTable(props) {
                 issuesCreatedError={props.vueIssuesCreatedError}
                 issuesClosed={props.vueIssuesClosed}
                 issuesClosedError={props.vueIssuesClosedError}
+                commitActivity={props.vueCommitActivity}
+                commitActivityError={props.vueCommitActivityError}
                 name="vue"
             />
     } 
     return(
-        <table className="stats-table">
+        <Table className="stats-table" size="sm" hover bordered>
                 <thead>
                     <tr>
+                        <th colSpan="4">Static Data</th>
+                        <th colSpan="4">Past {props.activity} weeks</th>
+                    </tr>
+                    <tr>
                         <th>Framework</th>
+                        <th>Size</th>
                         <th>Stars</th>
                         <th>Created</th>
-                        <th>Size</th>
-                        <th>Issues Created</th>
+                        <th>Issues Opened</th>
                         <th>Issues Closed</th>
-                        <th>COR (Closed Opened Ratio)</th>
+                        <th>ICOR</th>
+                        <th>Commits</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -72,7 +88,7 @@ function GithubDataTable(props) {
                     {ember}
                     {vue}
                 </tbody>
-            </table>
+            </Table>
     )
 }
 

@@ -27,9 +27,12 @@ class VoteSubmitForm extends Component {
             <label>
                 Email: 
             </label>
+            &nbsp; 
             <input type="email" name="email" value={this.state.email}></input>
+            <br></br>
             <label>
                 Cast vote for: 
+                &nbsp; 
                 <select name="repovoted" value={this.state.repovoted}>
                     <option value="1">React</option>
                     <option value="2">Angular</option>
@@ -37,6 +40,7 @@ class VoteSubmitForm extends Component {
                     <option value="4">Vue</option>
                 </select>
             </label>
+            <br></br>
             <input type="submit" value="Submit" />
         </form>
       );

@@ -2,27 +2,67 @@ import React from 'react';
 import VoteSubmitForm from './sub/VoteSubmitFormComponent';
 import VoteTable from './sub/VoteTableComponent';
 import GithubDataTable from './sub/GithubDataTableComponent';
+import GithubPopularityCard from './sub/GithubPopularityCardComponent'; 
+import GithubActivityCard from './sub/GithubActivityCardComponent'; 
+import GithubResolutionCard from './sub/GithubResolutionCardComponent'; 
+import {
+    Container, 
+    Row, 
+    Col
+} from 'reactstrap'; 
 
 // main presentational component 
 function HomeComponent(props) {
-    let {votes, votesError, votesLoaded, handleSubmit, message, frequency, activity, ...githubdata} = props; 
+    let {votes, votesError, votesLoaded, handleSubmit, message, frequency,...githubdata} = props; 
     return (
-        <div>
-            <h1>
-                Comparing GitHub Data - Client-Side
-            </h1> 
-            <h3>Stats pulled from past {activity} days</h3>
-            <h6>{message} (Updates occur every {Math.round(frequency/(1000*60)*100)/100} minute(s))</h6>
-            <GithubDataTable {...githubdata} />
-            <h1>Vote Tally</h1>
-            <VoteTable
-                votes={votes}
-                votesError={votesError}
-                votesLoaded={votesLoaded}
-             />
-            <h1>Submit Your Vote</h1>
-            <VoteSubmitForm handleSubmit={handleSubmit} />
-        </div>
+        <Container>
+            <Row className='justify-content-center text-center p-3'>
+                <Col>
+                    <GithubPopularityCard 
+                        title='Popularity' 
+                        tag='star-gazers' 
+                        {...githubdata}
+                    />
+                </Col>
+                <Col>
+                    <GithubActivityCard 
+                        title='Activity' 
+                        tag='Commits' 
+                        {...githubdata}
+                    />
+                </Col>
+                <Col>
+                    <GithubResolutionCard 
+                        title='Resolution' 
+                        tag='ICOR' 
+                        {...githubdata}
+                    />
+                </Col>
+            </Row>
+
+            <Row className='justify-content-center text-center p-3'>
+                <Col md='12'>
+                    <GithubDataTable {...githubdata} />
+                    <small>{message} (Updates occur every {Math.round(frequency/(1000*60)*100)/100} minute(s))</small>
+                </Col>
+            </Row>
+
+
+            <Row className='justify-content-center text-center p-3'>
+                <Col md='3'>
+                    <h1>Vote Tally</h1>
+                    <VoteTable
+                        votes={votes}
+                        votesError={votesError}
+                        votesLoaded={votesLoaded}
+                    />
+                </Col>
+                <Col md='3'>
+                    <h1>Cast Vote</h1>
+                    <VoteSubmitForm handleSubmit={handleSubmit} />
+                </Col>
+            </Row>
+        </Container>
     )
     
 

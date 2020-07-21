@@ -6,7 +6,8 @@ import {
     repoDataUrl, 
     issuesCreatedUrl, 
     issuesClosedUrl, 
-    votesAPIUrl 
+    votesAPIUrl, 
+    commitActivityUrl
     } from '../data/baseUrls'; 
 import moment from 'moment'; 
 
@@ -21,6 +22,7 @@ class MainComponent extends Component {
         this.fetchRepo(framework); 
         this.fetchIssuesCreated(framework, start_date); 
         this.fetchIssuesClosed(framework, start_date); 
+        this.fetchCommitActivity(framework); 
     }
     
     fetchVotes() {
@@ -95,6 +97,29 @@ class MainComponent extends Component {
             }
         );  
     }
+
+    fetchCommitActivity(framework) {
+        fetch(commitActivityUrl[framework])
+        .then(response => {
+            if (response.ok) {
+                return response; 
+            } else {
+                throw new Error(response.status + ': ' + response.statusText);  
+            }
+        })
+        .then(response => response.json())
+        .then(response => {
+            let weekly_commits = response.slice(52-this.state.activity); 
+            let total_commits = weekly_commits.map((week) => week.total); 
+            let sum_commits = total_commits.reduce((a, b) => a + b); 
+            this.setState({[framework + 'CommitActivity']: sum_commits, [framework + 'CommitActivityLoaded']: true, [framework + 'CommitActivityError']: false})
+        })
+        .catch(error => {
+            this.setState({[framework + 'CommitActivityError']: true, [framework + 'CommitActivityLoaded']: true})
+            }
+        ); 
+    }
+
     //method for pulling PR merges from start date to today (not using due to rate limit)
     fetchParticipation(framework, start_date) {
         fetch(pullRequestsMergedUrl[framework] + start_date)
@@ -147,7 +172,7 @@ class MainComponent extends Component {
     }
 
     componentDidMount() {
-        let start_date = moment().subtract(this.state.activity, 'days').format('YYYY-MM-DD'); 
+        let start_date = moment().subtract(this.state.activity, 'weeks').startOf('week').format('YYYY-MM-DD'); 
         //initial fetch 
         this.fetchVotes(); 
         this.fetchData('react', start_date); 

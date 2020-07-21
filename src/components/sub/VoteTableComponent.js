@@ -1,8 +1,11 @@
 import React from 'react'; 
+import {
+    Table
+} from 'reactstrap'; 
 
 function VoteTable(props) {
     return(
-        <table className="stats-table">
+        <Table className='stats-table' size='sm' bordered hover>
             <thead>
                 <tr>
                     <th>Framework</th>
@@ -35,11 +38,10 @@ function VoteTable(props) {
                             : <td colSpan='2'>Loading....</td>
 
                         }
-                        
                     </tr>
                 </tbody>
             }
-        </table>
+        </Table>
     ); 
 }
 

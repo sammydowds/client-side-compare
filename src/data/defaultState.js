@@ -12,6 +12,9 @@ export let defaultState = {
     reactIssuesClosed: {}, 
     reactIssuesClosedLoaded: false, 
     reactIssuesClosedError: false, 
+    reactCommitActivity: {}, 
+    reactCommitActivityLoaded: false, 
+    reactCommitActivityError: false, 
     //angular
     angularRepo: {},
     angulareRepoError: false,  
@@ -25,6 +28,9 @@ export let defaultState = {
     angularIssuesClosed: {}, 
     angularIssuesClosedLoaded: false, 
     angularIssuesClosedError: false, 
+    angularCommitActivity: {}, 
+    angularCommitActivityLoaded: false, 
+    angularCommitAcitvityError: false, 
     //ember
     emberRepo: {},
     emberRepoError: false, 
@@ -38,6 +44,9 @@ export let defaultState = {
     emberIssuesClosed: {}, 
     emberIssuesClosedLoaded: false, 
     emberIssuesClosedError: false, 
+    emberCommitActivity: {}, 
+    emberCommitActivityLoaded: false, 
+    emberCommitActivityError: false, 
     //vue
     vueRepo: {}, 
     vueRepoError: false, 
@@ -51,12 +60,15 @@ export let defaultState = {
     vueIssuesClosed: {}, 
     vueIssuesClosedLoaded: false, 
     vueIssuesClosedError: false,
+    vueCommitActivity: {}, 
+    vueCommitActivityLoaded: false, 
+    vueCommitActivityError: false, 
     //votes
     votes: {}, 
     votesError: false, 
     votesLoaded: false,
     //other 
     message: null, //message about last updated 
-    frequency: 65000, //frequency of fetches in ms
-    activity: 365 //days of activity you want to get data for
+    frequency: 120000, //frequency of fetches in ms
+    activity: 52 //weeks of activity you want to get data for
 }

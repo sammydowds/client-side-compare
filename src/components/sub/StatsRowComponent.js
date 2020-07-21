@@ -12,9 +12,9 @@ function StatsRow(props) {
                 </React.Fragment>
                 :<React.Fragment>
                     <td>{props.repo.name}</td>
+                    <td>{Math.round(props.repo.size/1000)}MB</td>
                     <td>{props.repo.stargazers_count}</td>
                     <td>{age}</td>
-                    <td>{Math.round(props.repo.size/1000)}MB</td>
                 </React.Fragment>
             }
             {props.issuesCreatedError 
@@ -28,6 +28,10 @@ function StatsRow(props) {
             {props.issuesClosedError || props.issuesCreatedError
                 ? <td>Data unavailable to calc</td>
                 : <td>{Math.round((props.issuesClosed/props.issuesCreated)*100)/100}</td>
+            }
+            {props.commitActivityError
+                ? <td>Fetch failed</td>
+                : <td>{props.commitActivity}</td>
             }
         </tr>
     )
