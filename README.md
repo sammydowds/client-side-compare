@@ -18,7 +18,7 @@ This is a dashboard to show Github statistics for some of the most popular clien
 
 ## Github Data Cards
 There are three data cards which repesent: 
-1) Popularity of a framework - this is how many stars each framework as on Github. 
+1) Popularity of a framework - this is how many stars each framework has on Github. 
 2) Acitivity of a framework - this is based on commits over the given period of time. 
 3) Issue Resolution Ratio - this is the ratio of issues closed compared to the issues opened over the given period of time. I like to compare this to your COD KDR - the higher the better. ;)
 
@@ -60,7 +60,7 @@ The issues and commits data is pulled from a period of time which you can specif
             baseUrls.js                           #URL's for API's 
             defaultState.js                       #init state of the UI 
 
-## Running the tests
+## Improvements
 
 ## Built With
 
