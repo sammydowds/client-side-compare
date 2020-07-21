@@ -19,14 +19,9 @@ function HomeComponent(props) {
     return (
         <Container>
             <div className='text-center'>
-                <Jumbotron className='bg-transparent' fluid>
-                    <h1 className="display-3">Client-Side Frameworks</h1>
-                    <p className="lead">This is a dashboard for comparing client-side frameworks.</p>
-                    <hr className="my-2" />
-                    <p className="lead"><strong>Please cast your vote below! Note: 1 vote per email and session</strong></p>
-                </Jumbotron>
+                    <img src='cover.png' height='300' width='600'/>
             </div>
-            <Row className='justify-content-center text-center p-3'>
+            <Row className='justify-content-center text-center m-3'>
                 <Col>
                     <GithubPopularityCard 
                         title='Github Popularity' 
@@ -50,7 +45,7 @@ function HomeComponent(props) {
                 </Col>
             </Row>
 
-            <Row className='justify-content-center text-center p-3 mb-5'>
+            <Row className='justify-content-center text-center m-3'>
                 <Col md='12'>
                     <GithubDataTable {...githubdata} />
                     <small>{message} (Updates occur every {Math.round(frequency/(1000*60)*100)/100} minute(s))</small>
@@ -58,7 +53,7 @@ function HomeComponent(props) {
             </Row>
 
 
-            <Row className='justify-content-center text-center p-3'>
+            <Row className='justify-content-center text-center m-3'>
                 <Col md='3'>
                     <p className='lead'><strong>Vote Tally</strong></p>
                     <VoteTable

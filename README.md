@@ -1,4 +1,6 @@
-
+<p align="center">
+  <img src="https://github.com/sammydowds/client-side-compare/blob/master/public/cover.png" />
+</p>
 
 Table of Contents
 ======================
@@ -28,7 +30,7 @@ The github data table show the source data, as well as some extra information wh
 ## How does it work?
 When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes. (Note, this frequency is configurable in the 'frequency' variable in the 'defaultState.js' file). 
 
-The app also make calls in a similar way to an API which I build to store voter information, and votes per framework. 
+The app also makes calls in a similar way to an API which I build to store voter information, and votes per framework. 
 
 ## File Structure 
 
