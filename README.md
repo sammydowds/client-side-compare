@@ -25,7 +25,7 @@ There are three data cards which repesent:
 ## Github Data Table
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
 
-* **Unless you have a hardware constraint - then check out the size column in this table**. 
+*Unless you have a hardware constraint - then check out the size column in this table. 
 
 ## How does it work?
 When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes.The app also makes calls in a similar way to an API which I built to store voter information, and votes per framework. The frequence at which you make calls is configurable with the 'frequency' variable in the 'defaultState.js' file. (Note: setting it below 1 minute will result in rate limit issues from the Github API). 
@@ -67,11 +67,12 @@ The issues and commits data is pulled from a period of time which you can specif
 - Set a time limit on when voting opportunity closes
 - More descriptive error message when an email has already been used 
 - Add a button to configure how many weeks of data you want to view (tie it to the 'activity' var in defaultState.js)
+- Make the voter submission form more complex (add requirements & messages)
 
 ## Built With
 
 * [React](https://reactjs.org/docs/getting-started.html) - The web framework used
-* [reactstrap] (https://reactstrap.github.io/) - for styling 
+* [reactstrap](https://reactstrap.github.io/) - for styling 
 
 ## Authors
 
