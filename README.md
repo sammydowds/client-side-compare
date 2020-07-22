@@ -18,14 +18,14 @@ This is a dashboard to show Github statistics for some of the most popular clien
 
 ## Github Data Cards
 There are three data cards which repesent: 
-1) Popularity of a framework - this is how many stars each framework has on Github. 
-2) Acitivity of a framework - this is based on commits over the given period of time. 
-3) Issue Resolution Ratio - this is the ratio of issues closed compared to the issues opened over the given period of time. I like to compare this to your COD KDR - the higher the better. ;)
+1) **Popularity of a framework** - this is how many stars each framework has on Github. 
+2) **Commit acitivity of a framework** - this is based on commits over the given period of time. 
+3) **Issue resolution ratio** - this is the ratio of issues closed compared to the issues opened over the given period of time. I like to compare this to your COD KDR - the higher the better. ;)
 
 ## Github Data Table
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
 
-*Unless you have a hardware constraint - then check out the size column in this table. 
+* **Unless you have a hardware constraint - then check out the size column in this table**. 
 
 ## How does it work?
 When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes. (Note, this frequency is configurable in the 'frequency' variable in the 'defaultState.js' file). 
@@ -61,7 +61,7 @@ The issues and commits data is pulled from a period of time which you can specif
             defaultState.js                       #init state of the UI 
 
 ## Improvements
-- Consolidate components for data tables into one
+- Consolidate components for data tables into one (for a more modular approach)
 - Process the data in the container app (versus in the cards)
 - Add a voter reset button 
 - Add testing 
@@ -84,3 +84,7 @@ Main docs that I used are here:
 - Search API: https://developer.github.com/v3/search/ (Used for finding the issues) *powerful*
 - Repo API: https://developer.github.com/v3/repos/ (Used for pulling the static data - stars, size, etc)
 - Repo Stats: https://developer.github.com/v3/repos/statistics/ (Used for pulling the activity data)
+
+For deployment - the mars buildpack is essential, and amazing. 
+Link: https://elements.heroku.com/buildpacks/mars/create-react-app-buildpack
+
