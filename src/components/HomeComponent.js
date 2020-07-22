@@ -8,9 +8,7 @@ import GithubResolutionCard from './sub/GithubResolutionCardComponent';
 import {
     Container, 
     Row, 
-    Col, 
-    Jumbotron, 
-    Button
+    Col
 } from 'reactstrap'; 
 
 // main presentational component 

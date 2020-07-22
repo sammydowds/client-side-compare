@@ -71,8 +71,8 @@ function GithubDataTable(props) {
                         <th colSpan="8" className='lead'><strong>Github Data</strong></th>
                     </tr>
                     <tr>
-                        <th colSpan="4">Static Data</th>
-                        <th colSpan="4">Past {props.activity} weeks</th>
+                        <th colSpan="4" className='lead'><strong>Static Data</strong></th>
+                        <th colSpan="4" className='lead'><strong>Past {props.activity} Weeks</strong></th>
                     </tr>
                     <tr>
                         <th>Framework</th>

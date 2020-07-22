@@ -10,8 +10,8 @@ Table of Contents
 * [Github Data Table](#github-data-table)
 * [How does it Work?](#how-does-it-work)
 * [File Structure](#file-structure)
-* [Running Tests](#running-tests)
-* [Licensing](#license)
+* [Improvements](#improvements)
+* [Acknowledgments](#acknowledgments)
 
 ## What is this for? 
 This is a dashboard to show Github statistics for some of the most popular client-side frameworks. 
@@ -23,7 +23,7 @@ There are three data cards which repesent:
 3) Issue Resolution Ratio - this is the ratio of issues closed compared to the issues opened over the given period of time. I like to compare this to your COD KDR - the higher the better. ;)
 
 ## Github Data Table
-The github data table show the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
+The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
 
 *Unless you have a hardware constraint - then check out the size column in this table. 
 
@@ -61,6 +61,13 @@ The issues and commits data is pulled from a period of time which you can specif
             defaultState.js                       #init state of the UI 
 
 ## Improvements
+- Consolidate components for data tables into one
+- Process the data in the container app (versus in the cards)
+- Add a voter reset button 
+- Add testing 
+- Add workflow 
+- Set a time limit on when voting opportunity closes
+- More descriptive error message when an email has already been used 
 
 ## Built With
 
@@ -70,6 +77,10 @@ The issues and commits data is pulled from a period of time which you can specif
 
 * **Sammy Dowds** - *Initial work* - [Profile](https://github.com/sammydowds)
 
-## License
-
 ## Acknowledgments
+Github is an amazing resource and offers great documentation. Thank you to a great team at Github! 
+
+Main docs that I used are here: 
+- Search API: https://developer.github.com/v3/search/ (Used for finding the issues) *powerful*
+- Repo API: https://developer.github.com/v3/repos/ (Used for pulling the static data - stars, size, etc)
+- Repo Stats: https://developer.github.com/v3/repos/statistics/ (Used for pulling the activity data)
