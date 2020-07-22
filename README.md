@@ -20,7 +20,7 @@ This is a dashboard to show Github statistics for some of the most popular clien
 There are three data cards which repesent: 
 1) **Popularity of a framework** - this is how many stars each framework has on Github. 
 2) **Commit acitivity of a framework** - this is based on commits over the given period of time. 
-3) **Issue resolution ratio** - this is the ratio of issues closed compared to the issues opened over the given period of time. I like to compare this to your COD KDR - the higher the better. ;)
+3) **Issue resolution ratio** - this is the ratio of issues closed compared to the issues opened over the given period of time. 
 
 ## Github Data Table
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
@@ -28,9 +28,9 @@ The github data table shows the source data, as well as some extra information w
 *Unless you have a hardware constraint - then check out the size column in this table. 
 
 ## How does it work?
-When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes.The app also makes calls in a similar way to an API which I built to store voter information, and votes per framework. The frequence at which you make calls is configurable with the 'frequency' variable in the 'defaultState.js' file. (Note: setting it below 1 minute will result in rate limit issues from the Github API). 
+When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes. The app also makes calls in a similar way to an API which I built to store voter information and votes per framework. The frequency at which you make calls is configurable with the 'frequency' variable in the 'defaultState.js' file. (Note: setting it below 1 minute will result in rate limit issues from the Github API). 
 
-The issues and commits data is pulled from a period of time which you can specify with the 'activity' variable in the 'defaultSate.js' file. By default it is set at 52 weeks, and it is recommended to stay under that. This means that it will pull data starting from 52 weeks ago. 
+The issues and commits data is pulled from a period of time which you can specify with the 'activity' variable in the 'defaultSate.js' file. By default it is set at 52 weeks, and it is recommended to stay under that.
 
 ## File Structure 
     │   App.css
