@@ -20,11 +20,11 @@ function VoteTable(props) {
                         </tr>
                         <tr>
                             <td>Angular</td>
-                            <td>{props.votes.filter((repo) => repo.name === 'angular')[0].votes}</td>
+                            <td>{props.votes.filter((repo) => repo.name === 'angular.js')[0].votes}</td>
                         </tr>
                         <tr>
                             <td>Ember</td>
-                            <td>{props.votes.filter((repo) => repo.name === 'ember')[0].votes}</td>
+                            <td>{props.votes.filter((repo) => repo.name === 'ember.js')[0].votes}</td>
                         </tr>
                         <tr>
                             <td>Vue</td>
