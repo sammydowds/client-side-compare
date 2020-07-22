@@ -34,7 +34,7 @@ When the app fires up, it makes a series of calls to Github's API. After the ini
 
 The issues and commits data is pulled from a period of time which you can specify with the 'activity' variable in the 'defaultSate.js' file. By default it is set at 52 weeks, and it is recommended to stay under that.
 
-When a vote is submitted, the voters email and the id of the framework is stored. The vote count for the respective framework is incrimented by one. The vote counts are accessible through one API call (reference the fetchVotes() and handleSubmit() functions in the main component). After a vote has been successfully submitted, the vote count is updated. 
+When a vote is submitted, the voters email and the id of the framework is stored. The vote count for the respective framework is incrimented by one. The vote counts are accessible through one API call (reference the fetchVotes() and handleSubmit() functions in the main component). After a vote has been successfully submitted, the vote count is updated on the UI. 
 
 Voting restrictions: 
 - Only one vote per email
