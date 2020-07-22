@@ -34,6 +34,6 @@ export const issuesClosedUrl = {
 }
 
 export const votesAPIUrl = {
-    'votes': 'http://localhost:8000/votes/', 
-    'castvote': 'http://localhost:8000/castvote/'
+    'votes': 'https://voterstorage.herokuapp.com/votes/', 
+    'castvote': 'https://voterstorage.herokuapp.com/castvote/'
 }

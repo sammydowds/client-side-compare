@@ -76,6 +76,7 @@ Voting restrictions:
 - More descriptive error message when an email has already been used 
 - Add a button to configure how many weeks of data you want to view (tie it to the 'activity' var in defaultState.js)
 - Make the voter submission form more complex (add requirements & messages)
+- Isolate props into data tables
 
 ## Built With
 
