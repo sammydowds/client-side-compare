@@ -67,11 +67,11 @@ Voting restrictions:
             defaultState.js                       #init state of the UI 
 
 ## Improvements
+- Add testing 
+- Add workflow 
 - Consolidate components for data tables into one (for a more modular approach)
 - Process the data in the container app (versus in the cards)
 - Add a voter reset button 
-- Add testing 
-- Add workflow 
 - Set a time limit on when voting opportunity closes
 - More descriptive error message when an email has already been used 
 - Add a button to configure how many weeks of data you want to view (tie it to the 'activity' var in defaultState.js)
