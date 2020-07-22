@@ -19,8 +19,10 @@ This is a dashboard to show Github statistics for some of the most popular clien
 ## Github Data Cards
 There are three data cards which repesent: 
 1) **Popularity of a framework** - this is how many stars each framework has on Github. 
-2) **Commit acitivity of a framework** - this is based on commits over the given period of time. 
+2) **Commit activity of a framework** - this is based on commits over the given period of time. 
 3) **Issue resolution ratio** - this is the ratio of issues closed compared to the issues opened over the given period of time. 
+
+*Why this data?* I think the **popularity** of a framework represents a lot of intangibles - more articles, more people know about it, potentially more engineers know it (hirability), and more stack overflow questions. The **commit activity** speaks to the body of developer interaction that the framework still carries with it. The **issue resolution ratio** answers the question: *if I have an issue, how likely will it be solved?*  
 
 ## Github Data Table
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
