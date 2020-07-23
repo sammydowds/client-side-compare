@@ -56,22 +56,22 @@ Docs for more on each endpoint:
 
 Learn more about queries for issues and PR's via the Github search endpoint [here](https://docs.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests). 
 
-Github Endpoint | HTTP Method | Stored
--- | -- | -- 
-`repos/ownername/reponame` | GET | Entire response 
-`search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | only the 'total_count'
-`search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| only the 'total_count'
-`repos/ownername/reponame/stats/commit_activity`     | GET | Sum 'total' per activity weeks
+Github Endpoint | HTTP Method | For | Stored
+-- | -- | -- | --
+`repos/ownername/reponame` | GET | Repo info | Entire response 
+`search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | Issues Created | only the 'total_count'
+`search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| Issues Closed | only the 'total_count'
+`repos/ownername/reponame/stats/commit_activity`     | GET | Commit Acitivity | Sum 'total' per activity weeks
 
 ## Fetches to Voter API 
 Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/. 
 
 More info on this API [here](https://github.com/sammydowds/client-side-compare-backend). 
 
-Endpoint | HTTP Method | Stored
--- | -- | -- 
-`votes/`     | GET | Entire response 
-`castvote/`     | POST | Nothing
+Endpoint | HTTP Method | For | Stored
+-- | -- | -- | --
+`votes/`     | GET | Framework Votes | Entire response 
+`castvote/`     | POST | Casting Vote | Nothing
 
 ## File Structure 
     │   App.css
