@@ -9,6 +9,7 @@ Table of Contents
 * [Github Data Cards](#github-data-cards)
 * [Github Data Table](#github-data-table)
 * [How does it Work?](#how-does-it-work)
+* [Fetch Table](#fetch-table)
 * [File Structure](#file-structure)
 * [Improvements](#improvements)
 * [Acknowledgments](#acknowledgments)
@@ -40,6 +41,15 @@ Voting restrictions:
 - Only one vote per email
 - Only one vote per browser session 
 
+## Fetch Table - Batch of Fetches
+Endpoint | HTTP Method | CRUD Method | Result | What is Stored
+-- | -- | -- | -- 
+`repos/*owner/name*` | GET | READ	| Returns an object of repo details | Entire response 
+`search/issues?q=repo:*owner/name*+is:issue+state:open+created:>*startdate*` | GET | READ | Returns an object | I store only the 'total_count'
+`search/issues?q=repo:*owner/name*+is:issue+closed:>*startdate*`	|GET| READ |	Object of issues closed since date | I store only the 'total_count'
+`repos/*owner/name*/stats/commit_activity`     | GET | READ | Object - week by week of commits | I sum the 'total' per week, and store it
+`votes/`     | GET | READ | Object - with frameworks and their vote counts | Entire response stored 
+`castvote/`     | POST | CREATE | Voter created | Nothing stored after 
 ## File Structure 
     │   App.css
     │   App.js
@@ -70,13 +80,13 @@ Voting restrictions:
 - Add testing 
 - Add workflow 
 - Consolidate components for data tables into one (for a more modular approach)
-- Process the data in the container app (versus in the cards)
+- Review data structure and improve
 - Add a voter reset button 
 - Set a time limit on when voting opportunity closes
 - More descriptive error message when an email has already been used 
 - Add a button to configure how many weeks of data you want to view (tie it to the 'activity' var in defaultState.js)
-- Make the voter submission form more complex (add requirements & messages)
-- Isolate props into data tables
+- Pass specific props into the cards/table 
+- Possibly remove catches in error handling, and simply throw exception 
 
 ## Built With
 
