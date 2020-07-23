@@ -43,7 +43,7 @@ Voting restrictions:
 
 ## Fetch Table - Batch of Fetches
 Endpoint | HTTP Method | CRUD Method | Result | What is Stored
--- | -- | -- | -- 
+-- | -- | -- | -- | --
 `repos/*owner/name*` | GET | READ	| Returns an object of repo details | Entire response 
 `search/issues?q=repo:*owner/name*+is:issue+state:open+created:>*startdate*` | GET | READ | Returns an object | I store only the 'total_count'
 `search/issues?q=repo:*owner/name*+is:issue+closed:>*startdate*`	|GET| READ |	Object of issues closed since date | I store only the 'total_count'
