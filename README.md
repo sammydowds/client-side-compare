@@ -44,12 +44,12 @@ Voting restrictions:
 ## Fetch Table - Batch of Fetches
 Endpoint | HTTP Method | Result | What is Stored
 -- | -- | -- | -- 
-`repos/ownername/reponame` | GET | READ	| Returns an object of repo details | Entire response 
-`search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | READ | Returns an object | only the 'total_count'
-`search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| READ |	Object of issues closed since date | only the 'total_count'
-`repos/ownername/reponame/stats/commit_activity`     | GET | READ | Object - week by week of commits | Sum 'total' per week
-`votes/`     | GET | READ | Object - with frameworks and their vote counts | Entire response 
-`castvote/`     | POST | CREATE | Voter created | Nothing
+`repos/ownername/reponame` | GET | Returns an object of repo details | Entire response 
+`search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | Returns an object | only the 'total_count'
+`search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET|	Object of issues closed since date | only the 'total_count'
+`repos/ownername/reponame/stats/commit_activity`     | GET | Object - week by week of commits | Sum 'total' per week
+`votes/`     | GET | Object - with frameworks and their vote counts | Entire response 
+`castvote/`     | POST | Voter created | Nothing
 ## File Structure 
     │   App.css
     │   App.js
