@@ -22,6 +22,7 @@ This is a dashboard to show Github statistics for some of the most popular clien
 <p align="center">
   <img src="https://github.com/sammydowds/client-side-compare/blob/master/public/datacards.png" />
 </p>
+
 There are three data cards which repesent: 
 1) **Popularity of a framework** - this is how many stars each framework has on Github. 
 2) **Commit activity of a framework** - this is based on commits over the given period of time. 
