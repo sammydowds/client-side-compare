@@ -41,12 +41,12 @@ Voting restrictions:
 - Only one vote per browser session 
 
 ## Fetches to Github
-For each framework, the following fetches are made to the Github API at https://api.github.com. In total, this results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint when the main component mounts. 
+For each framework, the following fetches are made to the Github API at https://api.github.com once the main component mounts, and then at a frequency set in the 'frequency' var in the 'defaultState.js' file. 
 
 Docs for more on each endpoint: 
-- Search API: https://developer.github.com/v3/search/ (Used for finding the issues) powerful
-- Repo API: https://developer.github.com/v3/repos/ (Used for pulling the static data - stars, size, etc)
-- Repo Stats: https://developer.github.com/v3/repos/statistics/ (Used for pulling the activity data)
+- [Search API](https://developer.github.com/v3/search/)
+- [Repo API](https://developer.github.com/v3/repos/)
+- [Repo Stats](https://developer.github.com/v3/repos/statistics/) 
 
 Learn more about queries for issues and PR's via the Github search endpoint [here](https://docs.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests). 
 
