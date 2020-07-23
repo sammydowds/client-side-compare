@@ -104,6 +104,7 @@ Endpoint | HTTP Method | Stored
 - Add a button to configure how many weeks of data you want to view (tie it to the 'activity' var in defaultState.js)
 - Pass specific props into the cards/table 
 - Possibly remove catches in error handling, and simply throw exception 
+- Utilize [this](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) for base URLs 
 
 ## Built With
 
