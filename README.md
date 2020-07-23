@@ -34,11 +34,11 @@ The github data table shows the source data, as well as some extra information w
 ## How does it work?
 The Main Component constructor will initialize the state of the app represented in [defaultState.js](https://github.com/sammydowds/client-side-compare/blob/master/src/data/defaultState.js). 
 
-Initial [fetches to Github](#fetches-to-github) and [fetches to the Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
+Initial [fetches to Github](#fetches-to-github) and [fetches to the Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the **'frequency'** variable of [defaultState.js](https://github.com/sammydowds/client-side-compare/blob/master/src/data/defaultState.js). The number of weeks you want to pull data from is also configurable in the **'activity'** variable in [defaultState](https://github.com/sammydowds/client-side-compare/blob/master/src/data/defaultState.js). 
 
 Data and the results of the fetches will be stored in the state of the [Main Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/MainComponent.js). From the Main Component, the state is passed as props down to the [Home Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/HomeComponent.js). From the Home Component, the props are distributed to different presentational components - rendering is conditional on data loading and data errors. 
 
-A voter handleSubmit() function is passed from Main Component down to the [Voter Submit Form Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/sub/VoteSubmitFormComponent.js). 
+A voter handleSubmit() method is passed from Main Component down to the [Voter Submit Form Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/sub/VoteSubmitFormComponent.js). 
 
 A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
 
@@ -47,7 +47,7 @@ Voting restrictions:
 - Only one vote per browser session 
 
 ## Fetches to Github
-For each framework, the following fetches are made to the Github API at https://api.github.com once the main component mounts, and then at a frequency set in the 'frequency' var in the 'defaultState.js' file. 
+For each framework, the following fetches are made to the Github API at https://api.github.com once the main component mounts, and then at a frequency set in the 'frequency' var in the [defaultState.js](https://github.com/sammydowds/client-side-compare/blob/master/src/data/defaultState.js) file. 
 
 Docs for more on each endpoint: 
 - [Search API](https://developer.github.com/v3/search/)
