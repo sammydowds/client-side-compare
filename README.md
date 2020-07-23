@@ -9,7 +9,8 @@ Table of Contents
 * [Github Data Cards](#github-data-cards)
 * [Github Data Table](#github-data-table)
 * [How does it Work?](#how-does-it-work)
-* [Fetch Table](#fetch-table)
+* [Fetches to Github](#fetches-to-github)
+* [Fetches to Voter API](#fetches-to-voter-api)
 * [File Structure](#file-structure)
 * [Improvements](#improvements)
 * [Acknowledgments](#acknowledgments)
@@ -40,7 +41,12 @@ Voting restrictions:
 - Only one vote per browser session 
 
 ## Fetches to Github
-For each framework, the following fetches are made to the Github API at https://api.github.com. In total, this results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint. 
+For each framework, the following fetches are made to the Github API at https://api.github.com. In total, this results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint when the main components mounts. 
+
+Docs for more on each endpoint: 
+- Search API: https://developer.github.com/v3/search/ (Used for finding the issues) powerful
+- Repo API: https://developer.github.com/v3/repos/ (Used for pulling the static data - stars, size, etc)
+- Repo Stats: https://developer.github.com/v3/repos/statistics/ (Used for pulling the activity data)
 
 Learn more about queries for issues and PR's via the Github search endpoint [here](https://docs.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests). 
 
