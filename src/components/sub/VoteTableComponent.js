@@ -19,11 +19,11 @@ function VoteTable(props) {
                             <td>{props.votes.filter((repo) => repo.name === 'react')[0].votes}</td>
                         </tr>
                         <tr>
-                            <td>Angular</td>
+                            <td>Angular.js</td>
                             <td>{props.votes.filter((repo) => repo.name === 'angular.js')[0].votes}</td>
                         </tr>
                         <tr>
-                            <td>Ember</td>
+                            <td>Ember.js</td>
                             <td>{props.votes.filter((repo) => repo.name === 'ember.js')[0].votes}</td>
                         </tr>
                         <tr>
