@@ -32,7 +32,7 @@ The github data table shows the source data, as well as some extra information w
 *Unless you have a hardware constraint - then check out the size column in this table. 
 
 ## How does it work?
-Inital fetches to [Github](#fetches-to-github) and the [Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
+Inital [fetches to Github](#fetches-to-github) and [fetches to the Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
 
 A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
 
@@ -41,7 +41,7 @@ Voting restrictions:
 - Only one vote per browser session 
 
 ## Fetches to Github
-For each framework, the following fetches are made to the Github API at https://api.github.com. In total, this results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint when the main components mounts. 
+For each framework, the following fetches are made to the Github API at https://api.github.com. In total, this results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint when the main component mounts. 
 
 Docs for more on each endpoint: 
 - Search API: https://developer.github.com/v3/search/ (Used for finding the issues) powerful
