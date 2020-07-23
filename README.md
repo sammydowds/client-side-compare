@@ -42,17 +42,21 @@ Voting restrictions:
 - Only one vote per browser session 
 
 ## Fetches to Github
-For each framework, the following fetches are made to the Github API at https://api.github.com. This results in 8 API calls to the 'search' endpoints, and 4 API calls to the 'repos' endpoint. 
+For each framework, the following fetches are made to the Github API at https://api.github.com. This results in 8 API calls to the 'search' endpoint, and 4 API calls to the 'repos' endpoint. 
+
+Learn more about queries for issues and PR's via the Github search endpoint [here](https://docs.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests). 
 
 Github Endpoint | HTTP Method | Stored
 -- | -- | -- 
 `repos/ownername/reponame` | GET | Entire response 
 `search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | only the 'total_count'
 `search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| only the 'total_count'
-`repos/ownername/reponame/stats/commit_activity`     | GET | Sum 'total' per week
+`repos/ownername/reponame/stats/commit_activity`     | GET | Sum 'total' per activity weeks
 
 ## Fetches to Voter API 
-Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/
+Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/. 
+
+More info on this API here: https://github.com/sammydowds/client-side-compare-backend. 
 
 Endpoint | HTTP Method | Stored
 -- | -- | -- 
