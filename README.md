@@ -31,6 +31,10 @@ There are three data cards which repesent:
 ***Why this data?*** I think the **popularity** of a framework represents a lot of intangibles - more articles, more people know about it, potentially more engineers know it (hirability), and more stack overflow questions. The **commit activity** speaks to the body of developer interaction that the framework still carries with it. The **issue resolution ratio** answers the question: if I have an issue, how likely will it be solved?  
 
 ## Github Data Table
+<p align="center">
+  <img src="https://github.com/sammydowds/client-side-compare/blob/master/public/githubdatatable.png" />
+</p>
+
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
 
 *Unless you have a hardware constraint - then check out the size column in this table. 
