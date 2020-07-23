@@ -28,7 +28,7 @@ class VoteSubmitForm extends Component {
                 Email: 
             </label>
             &nbsp; 
-            <input type="email" name="email" value={this.state.email}></input>
+            <input type="email" name="email" value={this.state.email} required></input>
             <br></br>
             <label>
                 Cast vote for: 

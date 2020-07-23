@@ -37,6 +37,7 @@ class MainComponent extends Component {
         .then(response => response.json())
         .then(response => this.setState({votes: response, votesLoaded: true, votesError: false, votesErrorMessage: null}))
         .catch(error => {
+            alert('Votes could not be loaded: ' + error); 
             this.setState({votesError: true, votesLoaded: true});
         }); 
     }
@@ -53,6 +54,7 @@ class MainComponent extends Component {
         .then(response => response.json())
         .then(response => this.setState({[framework + 'Repo']: response, [framework + 'RepoLoaded']: true, [framework + 'RepoError']: false}))
         .catch(error => {
+            alert('Repo could not be loaded for ' + framework + ' - ' + error); 
             this.setState({[framework + 'RepoError']: true, [framework + 'RepoLoaded']: true})
             }
         ); 
@@ -73,6 +75,7 @@ class MainComponent extends Component {
             this.setState({[framework + 'IssuesCreated']: total_created, [framework + 'IssuesCreatedLoaded']: true, [framework + 'IssuesCreatedError']: false})
         })
         .catch(error => {
+            alert('Issues Created could not be loaded for ' + framework + ' - ' + error); 
             this.setState({[framework + 'IssuesCreatedError']: true, [framework + 'IssuesCreatedLoaded']: true})
             }
         );  
@@ -93,6 +96,7 @@ class MainComponent extends Component {
             this.setState({[framework + 'IssuesClosed']: total_created, [framework + 'IssuesClosedLoaded']: true, [framework + 'IssuesClosedError']: false})
         })
         .catch(error => {
+            alert('Issues Closed could not be loaded for ' + framework + ' - ' + error); 
             this.setState({[framework + 'IssuesClosedError']: true, [framework + 'IssuesClosedLoaded']: true})
             }
         );  
@@ -115,6 +119,7 @@ class MainComponent extends Component {
             this.setState({[framework + 'CommitActivity']: sum_commits, [framework + 'CommitActivityLoaded']: true, [framework + 'CommitActivityError']: false})
         })
         .catch(error => {
+            alert('Commit Activity could not be loaded for ' + framework + ' - ' + error); 
             this.setState({[framework + 'CommitActivityError']: true, [framework + 'CommitActivityLoaded']: true})
             }
         ); 
@@ -136,6 +141,7 @@ class MainComponent extends Component {
             this.setState({[framework + 'Participation']: total_prmerged, [framework + 'ParticipationLoaded']: true, [framework + 'ParticipitationError']: false})
         })
         .catch(error => {
+            alert('PR merges could not be loaded for ' + framework + ' - ' + error); 
             this.setState({[framework + 'ParticipationError']: true, [framework + 'ParticipationLoaded']: true})
             }
         );  
@@ -153,21 +159,15 @@ class MainComponent extends Component {
                 credentials: 'same-origin'
             })
             .then(response => {
-                if (response.ok) {
-                    return response;
+                if (!response.ok) {
+                    alert('Your vote was not submitted. Please make sure you have not previously voted with that email. ' + response.status + ': ' + response.statusText);   
                 } else {
-                    throw new Error(response.status + ': ' + response.statusText); 
+                    sessionStorage.setItem('votedRepo', 'true'); 
+                    alert('Vote Submitted Successfully'); 
+                    this.fetchVotes(); 
                 }
-            })
-            .then(response => response.json())
-            .then(response => {
-                alert('Vote has been submitted! Voter: ' + response.email); 
-                sessionStorage.setItem('votedRepo', 'true');
-                this.fetchVotes(); 
-            })
-            .catch(error => {
-                alert(error); 
             }); 
+
         } else {
             alert('Sorry you have already voted during this session!'); 
         }

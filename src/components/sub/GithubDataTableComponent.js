@@ -6,10 +6,10 @@ import {
 
 function GithubDataTable(props) {
     //initializing rows to show loading  
-    let react = <tr><td colSpan="7">React stats loading...</td></tr>
-    let angular = <tr><td colSpan="7">Angular stats loading...</td></tr>
-    let ember = <tr><td colSpan="7">Ember stats loading...</td></tr>
-    let vue = <tr><td colSpan="7">Vue stats loading...</td></tr>
+    let react = <tr><td colSpan="8">React stats loading...</td></tr>
+    let angular = <tr><td colSpan="8">Angular stats loading...</td></tr>
+    let ember = <tr><td colSpan="8">Ember stats loading...</td></tr>
+    let vue = <tr><td colSpan="8">Vue stats loading...</td></tr>
 
     //conditional rendering based on loading data 
     if (props.reactRepoLoaded && props.reactIssuesCreatedLoaded && props.reactIssuesClosedLoaded && props.reactCommitActivityLoaded) {
