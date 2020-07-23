@@ -41,15 +41,24 @@ Voting restrictions:
 - Only one vote per email
 - Only one vote per browser session 
 
-## Fetch Table - Batch of Fetches
-Endpoint | HTTP Method | Stored
--- | -- | -- | -- 
+## Fetches to Github
+For each framework, the following fetches are made to the Github API at https://api.github.com. This results in 8 API calls to the 'search' endpoints, and 4 API calls to the 'repos' endpoint. 
+
+Github Endpoint | HTTP Method | Stored
+-- | -- | -- 
 `repos/ownername/reponame` | GET | Entire response 
 `search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | only the 'total_count'
 `search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| only the 'total_count'
 `repos/ownername/reponame/stats/commit_activity`     | GET | Sum 'total' per week
+
+## Fetches to Voter API 
+Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/
+
+Endpoint | HTTP Method | Stored
+-- | -- | -- 
 `votes/`     | GET | Entire response 
 `castvote/`     | POST | Nothing
+
 ## File Structure 
     │   App.css
     │   App.js
