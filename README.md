@@ -31,11 +31,9 @@ The github data table shows the source data, as well as some extra information w
 *Unless you have a hardware constraint - then check out the size column in this table. 
 
 ## How does it work?
-When the app fires up, it makes a series of calls to Github's API. After the initial calls to Github, it will also continue to make calls to Github every 2 minutes. The app also makes calls in a similar way to an API which I built to store voter information and votes per framework. The frequency at which you make calls is configurable with the 'frequency' variable in the 'defaultState.js' file. (Note: setting it below 1 minute will result in rate limit issues from the Github API). 
+Fetches to [Github](#fetches-to-github) and the [Votes API](#fetches-to-voter-api) are made initially once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
 
-The issues and commits data is pulled from a period of time which you can specify with the 'activity' variable in the 'defaultSate.js' file. By default it is set at 52 weeks, and it is recommended to stay under that.
-
-When a vote is submitted, the voters email and the id of the framework is stored. The vote count for the respective framework is incrimented by one. The vote counts are accessible through one API call (reference the fetchVotes() and handleSubmit() functions in the main component). After a vote has been successfully submitted, the vote count is updated on the UI. 
+A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
 
 Voting restrictions: 
 - Only one vote per email
@@ -56,7 +54,7 @@ Github Endpoint | HTTP Method | Stored
 ## Fetches to Voter API 
 Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/. 
 
-More info on this API here: https://github.com/sammydowds/client-side-compare-backend. 
+More info on this API [here](https://github.com/sammydowds/client-side-compare-backend). 
 
 Endpoint | HTTP Method | Stored
 -- | -- | -- 
