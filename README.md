@@ -24,7 +24,7 @@ There are three data cards which repesent:
 2) **Commit activity of a framework** - this is based on commits over the given period of time. 
 3) **Issue resolution ratio** - this is the ratio of issues closed compared to the issues opened over the given period of time. 
 
-*Why this data?* I think the **popularity** of a framework represents a lot of intangibles - more articles, more people know about it, potentially more engineers know it (hirability), and more stack overflow questions. The **commit activity** speaks to the body of developer interaction that the framework still carries with it. The **issue resolution ratio** answers the question: *if I have an issue, how likely will it be solved?*  
+***Why this data?*** I think the **popularity** of a framework represents a lot of intangibles - more articles, more people know about it, potentially more engineers know it (hirability), and more stack overflow questions. The **commit activity** speaks to the body of developer interaction that the framework still carries with it. The **issue resolution ratio** answers the question: if I have an issue, how likely will it be solved?  
 
 ## Github Data Table
 The github data table shows the source data, as well as some extra information which was included with one of the API calls for stars - so I kept it in. Although, the main focus should be on the data cards*. 
@@ -38,9 +38,7 @@ Initial [fetches to Github](#fetches-to-github) and a [fetch to the Voter API](#
 
 Data and the results of the fetches will be stored in the state of the [Main Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/MainComponent.js). From the Main Component, the state is passed as props down to the [Home Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/HomeComponent.js). From the Home Component, the props are distributed to different presentational [sub components](https://github.com/sammydowds/client-side-compare/tree/master/src/components/sub) - rendering is conditional on data loading and data errors. 
 
-A voter handleSubmit() method is passed from Main Component down to the [Voter Submit Form Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/sub/VoteSubmitFormComponent.js). 
-
-A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
+A voter handleSubmit() method is passed from Main Component down to the [Voter Submit Form Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/sub/VoteSubmitFormComponent.js). A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
 
 Voting restrictions: 
 - Only one vote per email
@@ -56,19 +54,19 @@ Docs for more on each endpoint:
 
 Learn more about queries for issues and PR's via the Github search endpoint [here](https://docs.github.com/en/github/searching-for-information-on-github/searching-issues-and-pull-requests). 
 
-Github Endpoint | HTTP Method | For | Stored
+Github Endpoint | HTTP Method | For | Stored in State
 -- | -- | -- | --
-`repos/ownername/reponame` | GET | Repo info | Entire response 
-`search/issues?q=repo:ownername/reponame+is:issue+state:open+created:>startdate` | GET | Issues Created | only the 'total_count'
-`search/issues?q=repo:ownername/reponame+is:issue+closed:>startdate`	|GET| Issues Closed | only the 'total_count'
-`repos/ownername/reponame/stats/commit_activity`     | GET | Commit Acitivity | Sum 'total' per activity weeks
+`repos/:owner/:repo` | GET | Repo info | Entire response 
+`search/issues?q=repo:owner/:repo+is:issue+state:open+created:>:startdate` | GET | Issues Created | only the 'total_count'
+`search/issues?q=repo:owner/:repo+is:issue+closed:>:startdate`	|GET| Issues Closed | only the 'total_count'
+`repos/:owner/:repo/stats/commit_activity`     | GET | Commit Acitivity | Sum 'total' per activity weeks
 
 ## Fetches to Voter API 
 Votes are fetched and submitted to the voter api at https://voterstorage.herokuapp.com/. 
 
 More info on this API [here](https://github.com/sammydowds/client-side-compare-backend). 
 
-Endpoint | HTTP Method | For | Stored
+Endpoint | HTTP Method | For | Stored in State
 -- | -- | -- | --
 `votes/`     | GET | Framework Votes | Entire response 
 `castvote/`     | POST | Casting Vote | Nothing
