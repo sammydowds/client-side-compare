@@ -32,7 +32,13 @@ The github data table shows the source data, as well as some extra information w
 *Unless you have a hardware constraint - then check out the size column in this table. 
 
 ## How does it work?
-Inital [fetches to Github](#fetches-to-github) and [fetches to the Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
+The Main Component constructor will initialize the state of the app represented in [defaultState.js](https://github.com/sammydowds/client-side-compare/blob/master/src/data/defaultState.js). 
+
+Initial [fetches to Github](#fetches-to-github) and [fetches to the Voter API](#fetches-to-voter-api) are made once the main component mounts after React updates the DOM. After the initial fetch, fetches will be made at a frequency set in the 'frequency' variable of 'defaultState.js'.
+
+Data and the results of the fetches will be stored in the state of the [Main Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/MainComponent.js). From the Main Component, the state is passed as props down to the [Home Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/HomeComponent.js). From the Home Component, the props are distributed to different presentational components - rendering is conditional on data loading and data errors. 
+
+A voter handleSubmit() function is passed from Main Component down to the [Voter Submit Form Component](https://github.com/sammydowds/client-side-compare/blob/master/src/components/sub/VoteSubmitFormComponent.js). 
 
 A voter can cast a vote with the form at the bottom of the page, and review the vote tally for a given framework in the Vote Tally table. 
 
